@@ -18,7 +18,6 @@ class Core
         $url = $this->getUrl();
 
         // Look in controllers for first value
-
         if (isset($url[0])) {
             $url[0] = ucwords($url[0]);
         } else {
