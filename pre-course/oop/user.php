@@ -94,5 +94,3 @@ echo '<br>';
 $user1->__set('name', 'Brad');
 echo $user1->__get('name');
 
-
-
