@@ -1,5 +1,5 @@
-<h1><?php if (isset($data)) {
-        echo $data['title'];
-    } ?></h1>
+<?php require APP_ROOT . '/views/inc/header.php'; ?>
 
-<?php echo APP_ROOT ?>
+<h1><?php if (isset($data['title'])) echo $data['title']; ?></h1>
+
+<?php require APP_ROOT . '/views/inc/footer.php'; ?>
