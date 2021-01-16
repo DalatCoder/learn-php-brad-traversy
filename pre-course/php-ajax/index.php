@@ -9,18 +9,23 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script>
         function showSuggestion(value) {
-            if (value.length == 0) {
-                document.getElementById('output').innerHTML = '';
+            value = value.trim();
+
+            const outputElement = document.getElementById('output');
+            if (value.length === 0) {
+                outputElement.innerHTML = '';
             } else {
                 // AJAX Request
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById('output').innerHTML = this.responseText;
-                    }
-                };
-                xmlhttp.open("GET", "suggest.php?q="+value, true);
-                xmlhttp.send();
+                const url = `suggest.php?q=${value}`;
+
+                fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    outputElement.innerHTML = data;
+                })
+                .catch(err => {
+                    console.log(err);
+                });
             }
         }
     </script>
