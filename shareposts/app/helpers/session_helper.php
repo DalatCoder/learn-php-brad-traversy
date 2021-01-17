@@ -20,8 +20,7 @@ function flash($name = '', $message = '', $class = 'alert alert-success')
 
             $_SESSION[$name] = $message;
             $_SESSION[$name . '_class'] = $class;
-        }
-        elseif (empty($message) && isset($_SESSION[$name])) {
+        } elseif (empty($message) && isset($_SESSION[$name])) {
             $class = isset($_SESSION[$name . '_class']) ? $_SESSION[$name . '_class'] : '';
             echo "<div class='$class' id='msg-flash'>{$_SESSION[$name]}</div>";
 
@@ -29,4 +28,13 @@ function flash($name = '', $message = '', $class = 'alert alert-success')
             unset($_SESSION[$name . '_class']);
         }
     }
+}
+
+function isLoggedIn()
+{
+    if (isset($_SESSION['user_id'])) {
+        return true;
+    }
+
+    return false;
 }

@@ -5,6 +5,7 @@
         <div class="card card-body bg-light mt-5">
             <?php flash('register_success'); ?>
             <?php flash('login_failed'); ?>
+            <?php flash('must_login'); ?>
             <h2 class="text-center">Login</h2>
             <p>Please fill in your credentials to login</p>
             <form action="<?php echo URL_ROOT; ?>/users/login" method="POST">
