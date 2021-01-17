@@ -23,4 +23,21 @@ class Post
                               ');
         return $this->db->resultSet();
     }
+
+    public function addPost($data)
+    {
+        $this->db->query('INSERT INTO Posts (user_id, title, body) VALUES (:user_id, :title, :body)');
+
+        // Bind Values
+        $this->db->bind(':user_id', $data['user_id']);
+        $this->db->bind(':title', $data['title']);
+        $this->db->bind(':body', $data['body']);
+
+        // Execute
+        if ($this->db->execute()) {
+            return true;
+        }
+
+        return false;
+    }
 }
