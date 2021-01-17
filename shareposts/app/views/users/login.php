@@ -3,6 +3,7 @@
 <div class="row mb-5">
     <div class="col-md-6 mx-auto">
         <div class="card card-body bg-light mt-5">
+            <?php flash('register_success'); ?>
             <h2 class="text-center">Login</h2>
             <p>Please fill in your credentials to login</p>
             <form action="<?php echo URL_ROOT; ?>/users/login" method="POST">
@@ -29,7 +30,8 @@
                         <input type="submit" value="Login" class="btn btn-success btn-block">
                     </div>
                     <div class="col">
-                        <a href="<?php echo URL_ROOT ?>/users/register" class="btn btn-light btn-block">No account? Register now</a>
+                        <a href="<?php echo URL_ROOT ?>/users/register" class="btn btn-light btn-block">No account?
+                            Register now</a>
                     </div>
                 </div>
             </form>
