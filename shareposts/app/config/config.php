@@ -13,3 +13,6 @@ define('URL_ROOT', 'http://localhost/php-oop-mvc/shareposts');
 
 // Site Name
 define('SITE_NAME', 'SharePosts');
+
+// App Version
+define('APP_VERSION', '1.0.0');
