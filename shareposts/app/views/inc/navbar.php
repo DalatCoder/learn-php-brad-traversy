@@ -26,7 +26,7 @@
                         <a class="nav-link" href="<?php echo URL_ROOT; ?>/users/register">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo URL_ROOT; ?>/users/login">About</a>
+                        <a class="nav-link" href="<?php echo URL_ROOT; ?>/users/login">Login</a>
                     </li>
                 <?php endif ?>
             </ul>
