@@ -129,18 +129,24 @@ class Users extends Controller
 
             // Make sure errors are empty
             if (empty($data['email_err']) && empty($data['password_err'])) {
-                // Validated
-                die('SUCCESS');
+                // Check and set logged in user
+                $loggInUser = $this->userModel->login($data['email'], $data['password']);
+                if ($loggInUser) {
+                    // Create Session
+                    die('success');
+                } else {
+                    flash('login_failed', 'Login failed! Incorrect email or password 😢', 'alert alert-danger');
+                }
             }
         } else {
             // Load login form
 
             // Init data
             $data = [
-              'email' => '',
-              'password' => '',
-              'email_err' => '',
-              'password_err' => ''
+                'email' => '',
+                'password' => '',
+                'email_err' => '',
+                'password_err' => ''
             ];
         }
 
